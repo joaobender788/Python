@@ -1,86 +1,88 @@
-#n = int(input("Digite um valor: R$"))
-#cont100 = 0;
-#cont50 = 0;
-#cont10 = 0;
-#cont1 = 0;
+import random
+#Exercicio 2
+numero = random.randint(1, 100)
 
-#cont100 = n//100;
-#n = n%100;
-#cont50 = n//50;
-#n = n%50;
-#cont10 = n//10;
-#n = n%10;
-#cont1 = n//1;
-#n = n%1;
+guess = (int(input("Começando novo jogo! Digite um número de 1 a 100: ")))
 
-#print("Notas de 100 reais: ", cont100);
-#print("Notas de 50 reais: ", cont50);
-#print("Notas de 10 reais: ", cont10);
-#print("Notas de 1 reais: ", cont1);
+while guess != numero:
+  if guess > numero:
+      print (f"Número é menor que {guess}")
+      guess = int(input("Tente novamente: "))
+  elif guess < numero:
+      print (f"Número maior que {guess}")  
+      guess = int(input("Tente novamente: "))
 
-#----------
+print(f"Parabéns! o número é igual a {guess}")
 
-#t = int(input("Digite o tempo total em segundos: "))
+#Exercicio 4
+#print("Bem-vindo ao banco! Escolha uma das opções: ")
+#escolha = 0
+#saldo = 0
+#
+#while escolha != 4:
+#    print("\n1- Depositar\n2- Sacar\n3- Ver saldo\n4- Sair")
+#    escolha = int(input("Escolha: "))
+#
+#    match escolha:
+#        case 1:
+#            deposito = float(input("Digite o quanto quer depositar: "))
+#            saldo += deposito
+#        case 2:
+#            saque = float(input("Digite o quanto quer sacar: "))
+#            saldo -= saque
+#        case 3:
+#            print(f"Saldo: {saldo}")  
+#        case 4:
+#            print("Encerrando programa...")    
+#        case _:
+#            print("Opção invalida.") 
+#
+#print("Programa encerrado.")            
 
-#segundos = t%60;
-#t //= 60;
-#minutos = t%60
-#t //= 60;
-#horas = t;
-#print("Horas: ", horas, "\nMinutos: ", minutos, "\nSegundos: ", segundos);
+#Exercicio 8
+#
+#numero = int(input("Digite um número para ver sua tabuada do 1 ao 10: "))
+#
+#for i in range (1, 11):
+#    print (f"{numero} x {i} = ", numero * i)
 
-#n1 = float(input("Número 1: "))
-#n2 = float(input("Número 2: "))
+#Exercicio 9
+#print("Digite números para calcular a média. Digite 'fim' para encerrar.")
+#soma = 0
+#quantidade = 0
+#
+#while True:
+#    entrada = input("Digite um número (ou 'fim'): ")
+#
+#    if entrada.lower() == "fim":
+#
+#    try:
+#        numero = float(entrada)
+#        soma += numero
+#        quantidade += 1
+#    except ValueError:
+#        print("Entrada inválida. Por favor, digite um número ou 'fim'.")
+#
+#if quantidade > 0:
+#    media = soma / quantidade
+#    print(f"Média dos {quantidade} números digitados: {media:.2f}")
+#else:
+#    print("Nenhum número válido foi digitado.")
 
-#print(n1, " + ", n2, ": ", n1+n2);
-#print(n1, " - ", n2, ": ", n1-n2);
-#print(n1, " x ", n2, ": ", n1*n2);
-#print(n1, " / ", n2, ": ", n1/n2);
-
-#----------
-
-#print("FATORIAL DE 9 (9!)\n")
-#n = 8;
-#fat = 9;
-#for i in range (8):
-#    fat *= n;
-#    print("9 x ", n, ": ", fat)
-#    n -= 1;
-
-#print ("Valor final: ", fat)
-
-#----------
-
-#print("FATORIAL DE 9 (9!)\n")
-#contador = 8;
-#fat = 9;
-
-#while contador > 0:
-#    fat = fat*contador;
-#    contador -= 1;
-
-#print("Valor final: ", fat);
-
-#----------
-print("CALCULADORA\n1- Adição\n2- Subtração\n3- Multiplicação\n4- Divisão")
-op = int(input("Digite a opção: "))
-
-match op:
-    case 1:
-        num1 = float(input("Digite o primeiro número: "))
-        num2 = float(input("Digite o segundo número: "))
-        print(num1, " + ", num2, " = ", num1+num2)
-    case 2:
-        num1 = float(input("Digite o primeiro número: "))
-        num2 = float(input("Digite o segundo número: "))
-        print(num1, " - ", num2, " = ", num1-num2)    
-    case 3:
-        num1 = float(input("Digite o primeiro número: "))
-        num2 = float(input("Digite o segundo número: "))
-        print(num1, " x ", num2, " = ", num1*num2)    
-    case 4:
-        num1 = float(input("Digite o primeiro número: "))
-        num2 = float(input("Digite o segundo número: "))
-        print(num1, " / ", num2, " = ", num1/num2)    
-    case _:
-        print("Opção invalida.")
+#Exercicio 10
+#    
+#nome = (input("Digite seu nome: "))
+#nota1 = float(input("Digite a nota 1: "))        
+#nota2 = float(input("Digite a nota 2: "))
+#nota3 = float(input("Digite a nota 3: "))
+#
+#media = (nota1 + nota2 + nota3)/3
+#
+#print(f"Nome: {nome}")
+#
+#if media >= 7:
+#    print("Situação: Aprovado.")
+#elif media >= 5 and media < 7:
+#    print("Situação: Recuperação.")
+#else:
+#    print("Situação: Reprovado.")    
