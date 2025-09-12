@@ -1,4 +1,32 @@
 import random
+import string
+#Exercicio 1
+caracteres_especiais = "!@#$%^&*()"
+senha = input("Digite sua senha: ")
+
+
+tem_8_caracteres = len(senha) >= 8
+tem_maiuscula = any(c.isupper() for c in senha)
+tem_minuscula = any(c.islower() for c in senha)
+tem_numero = any(c.isdigit() for c in senha)
+tem_especial = any(c in caracteres_especiais for c in senha)
+
+
+if all([tem_8_caracteres, tem_maiuscula, tem_minuscula, tem_numero, tem_especial]):
+    print("Senha forte!")
+else:
+    print("Senha fraca. Motivos:")
+    if not tem_8_caracteres:
+        print("- Deve ter pelo menos 8 caracteres.")
+    if not tem_maiuscula:
+        print("- Deve conter pelo menos uma letra maiúscula.")
+    if not tem_minuscula:
+        print("- Deve conter pelo menos uma letra minúscula.")
+    if not tem_numero:
+        print("- Deve conter pelo menos um número.")
+    if not tem_especial:
+        print(f"- Deve conter pelo menos um caractere especial: {caracteres_especiais}")
+
 #Exercicio 2
 numero = random.randint(1, 100)
 
@@ -85,4 +113,4 @@ print(f"Parabéns! o número é igual a {guess}")
 #elif media >= 5 and media < 7:
 #    print("Situação: Recuperação.")
 #else:
-#    print("Situação: Reprovado.")    
+#    print("Situação: Reprovado.")
