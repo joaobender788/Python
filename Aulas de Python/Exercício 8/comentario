@@ -1,0 +1,12 @@
+Quando você usa GET, os dados do formulário são anexados à URL como parâmetros de consulta (query string).
+Por exemplo, se você preencher:
+
+Nome: João
+Idade: 25
+Cidade: São Paulo
+
+A URL ficará assim:
+http://127.0.0.1:5000/resultado?nome=João&idade=25&cidade=São+Paulo
+Os dados ficam visíveis na barra de endereços.
+
+Já no POST, os dados não são visíveis na URL, e sim no corpo da requisição.
