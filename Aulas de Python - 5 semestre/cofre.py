@@ -7,11 +7,23 @@ def preparar_cifragem(senha):
     'sha256',
     senha.encode(),
     salt,
-    10000
+    100000
     )
     iv = os.urandom(16)
 
     return salt, chave, iv
+
+def adicionar_padding(dados):
+    # Calcula quantos bytes faltam para chegar no múltiplo de 16
+    faltam = 16 - (len(dados) % 16)
+    # Cria o preenchimento (ex: se faltam 3, cria [3, 3, 3])
+    preenchimento = bytes([faltam] * faltam)
+    return dados + preenchimento
+
+def remover_padding(dados):
+    # O último byte nos diz quantos bytes foram adicionados
+    faltam = dados[-1]
+    return dados[:-faltam]
 
 
 print("PROGRAMA DE COFRE\n")
